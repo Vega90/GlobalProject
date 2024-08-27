@@ -1,0 +1,246 @@
+﻿@page "/tickers"
+@using System.Globalization
+
+@inject HttpClient Http
+@inject TickersService tickersService
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+
+<PageTitle>Tickers</PageTitle>
+
+<h1>Estadísticas Financieras</h1>
+
+<p>Datos históricos y estadísticas sobre activos financieros</p>
+
+<br/>
+
+<RadzenCard>
+    <RadzenCardTitle>Seleccione el Activo, el Período y el Intervalo</RadzenCardTitle>
+    <RadzenFieldset>
+        <RadzenDropDown @bind-Value="selectedTicker" Data="@(tickers)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un ticker" />
+        <RadzenDropDown @bind-Value="selectedPeriod" Data="@(periods)" Placeholder="Selecciona un periodo" Change="OnPeriodChanged" />
+        <RadzenDropDown @bind-Value="selectedInterval" Data="@(intervals)" Placeholder="Selecciona un intervalo" />
+        <RadzenButton Text="Consultar" ButtonStyle="ButtonStyle.Primary" Click="OnSubmit" />
+    </RadzenFieldset>
+
+    @if (data != null && listaValores.Count!=0)
+    {
+        <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12">
+            <RadzenCard Variant="Variant.Outlined">
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Wrap="FlexWrap.Wrap">
+                    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem">
+                        <RadzenCheckBox @bind-Value="@trend" Name="Trend"></RadzenCheckBox>
+                        <RadzenLabel Text="Tendencia" Component="trend" class="rz-color-danger-dark" />
+                    </RadzenStack>
+                    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem">
+                        <RadzenCheckBox @bind-Value="@median" Name="Median"></RadzenCheckBox>
+                        <RadzenLabel Text="Mediana" Component="median" class="rz-color-success-dark" />
+                    </RadzenStack>
+                    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem">
+                        <RadzenCheckBox @bind-Value="@mean" Name="Mean"></RadzenCheckBox>
+                        <RadzenLabel Text="Media" Component="mean" class="rz-color-info-dark" />
+                    </RadzenStack>
+                    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem">
+                        <RadzenCheckBox @bind-Value="@mode" Name="Mode"></RadzenCheckBox>
+                        <RadzenLabel Text="Moda" Component="mode" class="rz-color-warning-darker" />
+                    </RadzenStack>
+                </RadzenStack>
+            </RadzenCard>
+
+            <RadzenChart>
+                <RadzenLineSeries Smooth="true" Data="@listaValores" CategoryProperty="@formatoFecha" Title=@selectedTicker ValueProperty="Close" RenderingOrder="1">
+                    <RadzenSeriesTrendLine Visible="@trend" Stroke="var(--rz-danger-dark)" LineType="LineType.Dashed" />
+                    <RadzenSeriesMedianLine Visible="@median" Stroke="var(--rz-success-dark)" LineType="LineType.Dotted" />
+                    <RadzenSeriesMeanLine Visible="@mean" Stroke="var(--rz-info-dark)" LineType="LineType.Dotted" />
+                    <RadzenSeriesModeLine Visible="@mode" Stroke="var(--rz-warning-darker)" LineType="LineType.Dotted" />
+
+                </RadzenLineSeries>
+                <RadzenLegend Visible="false" />
+                <RadzenCategoryAxis Padding="20" />
+                <RadzenValueAxis Formatter="@FormatAsEUR">
+                    <RadzenGridLines Visible="true" />
+                    <RadzenAxisTitle Text="Close in EUR" />
+                </RadzenValueAxis>
+            </RadzenChart>
+        
+        @if (dias)
+        {
+            <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+            @ref="grid" Data="@listaValores" TItem="Ticker" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+                <Columns>
+                    <RadzenDataGridColumn TItem="Ticker" Property="Date" Title="Fecha" FormatString="{0:yyyy-MM-dd}" Width="Auto" TextAlign="TextAlign.Center" />
+
+                    <RadzenDataGridColumn TItem="Ticker" Property="Open" Title="Apertura" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="High" Title="Máximo" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Low" Title="Mínimo" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Close" Title="Cierre" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Volume" Title="Volumen" FormatString="{0:N0}" Width="Auto" TextAlign="TextAlign.Center" />
+                </Columns>
+            </RadzenDataGrid>
+        }
+        else if(horas)
+        {
+            <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+            @ref="grid" Data="@listaValores" TItem="Ticker" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+                <Columns>
+                
+
+                    <RadzenDataGridColumn TItem="Ticker" Property="Datetime" Title="Fecha" FormatString="{0:yyyy-MM-dd HH:mm:ss}" Width="Auto" TextAlign="TextAlign.Center" />
+                
+                    <RadzenDataGridColumn TItem="Ticker" Property="Open" Title="Apertura" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="High" Title="Máximo" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Low" Title="Mínimo" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Close" Title="Cierre" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Volume" Title="Volumen" FormatString="{0:N0}" Width="Auto" TextAlign="TextAlign.Center" />
+                </Columns>
+            </RadzenDataGrid>
+        }
+        </RadzenStack>
+        
+    }
+</RadzenCard>
+
+
+
+@code {
+    private string selectedTicker;
+    private string selectedPeriod = "1d"; // Valor por defecto
+    private string selectedInterval = "1m"; // Valor por defecto
+    RadzenDataGrid<Ticker> grid;
+
+    private string formatoFecha = "";
+    bool trend = true;
+    bool median = false;
+    bool mean = false;
+    bool mode = false;
+    bool dias = false;
+    bool horas = false;
+
+    string FormatAsEUR(object value)
+    {
+        double number;
+        if (double.TryParse(value.ToString(), out number))
+        {
+            // Usa el formato para euros en España
+            return number.ToString("C0", CultureInfo.CreateSpecificCulture("es-ES"));
+        }
+        else
+        {
+            return string.Empty;
+        }
+    }
+
+    private Dictionary<string, string> tickers = new Dictionary<string, string>
+    {
+        { "Apple Inc.", "AAPL" },
+        { "Microsoft Corp.", "MSFT" },
+        { "Amazon.com Inc.", "AMZN" },
+        { "Banco Santander", "SAN.MC" },
+        { "BBVA", "BBVA.MC" },
+        { "Telefónica", "TEF.MC" },
+        { "Inditex", "ITX.MC" },
+        { "Iberdrola", "IBE.MC" },
+        { "Repsol", "REP.MC" },
+        { "CaixaBank", "CABK.MC" },
+        { "Amadeus", "AMS.MC" },
+        { "Aena", "AENA.MC" },
+        { "Ferrovial", "FER.MC" },
+        { "Bitcoin EUR", "BTC-EUR" }
+    };
+
+    private List<string> periods = new List<string>
+    {
+        "1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "max"
+    };
+
+    private List<string> allIntervals = new List<string>
+    {
+        "1m", "2m", "5m", "15m", "30m", "60m", "90m", "1d", "5d", "1wk"
+    };
+
+    private Dictionary<string, List<string>> periodIntervals = new Dictionary<string, List<string>>
+    {
+        { "1d", new List<string> { "1m", "2m", "5m", "15m", "30m", "60m", "90m" } },
+        { "5d", new List<string> { "1m", "2m", "5m", "15m", "30m", "60m", "90m" } },
+        { "1mo", new List<string> { "1d", "5d", "1wk" } },
+        { "3mo", new List<string> { "1d", "5d", "1wk" } },
+        { "6mo", new List<string> { "1d", "5d", "1wk" } },
+        { "1y", new List<string> { "1d", "5d", "1wk" } },
+        { "2y", new List<string> { "1d", "5d", "1wk" } },
+        { "5y", new List<string> { "1d", "5d", "1wk" } },
+        { "10y", new List<string> { "1d", "5d", "1wk" } },
+        { "max", new List<string> { "1d", "5d", "1wk" } }
+    };
+
+    private List<string> intervals = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        // Inicializa con valores predeterminados si es necesario
+        selectedPeriod = periods.FirstOrDefault();
+        UpdateIntervals();
+    }
+
+    private void OnPeriodChanged(object value)
+    {
+        selectedPeriod = value.ToString();
+        UpdateIntervals();
+    }
+
+    private void UpdateIntervals()
+    {
+        if (periodIntervals.TryGetValue(selectedPeriod, out var validIntervals))
+        {
+            intervals = allIntervals.Where(interval => validIntervals.Contains(interval)).ToList();
+            if (!intervals.Contains(selectedInterval))
+            {
+                selectedInterval = intervals.FirstOrDefault();
+            }
+        }
+        else
+        {
+            intervals = new List<string>();
+            selectedInterval = null;
+        }
+    }
+
+    private Dictionary<string, List<Ticker>> data;
+    private List<Ticker> listaValores;
+
+    private async Task OnSubmit()
+    {
+        formatoFecha = "";
+
+        data = await tickersService.GetTickerDataAsync(
+            selectedTicker, 
+            selectedTicker, 
+            selectedPeriod, 
+            selectedInterval
+        );
+
+
+        listaValores = data.Values.SelectMany(list => list).ToList();
+
+        if (listaValores.Count != 0)
+        {
+            var firstTicker = listaValores.First();
+            DateTime firstDateTime = firstTicker.Datetime;
+
+
+            if (firstTicker.Datetime != DateTime.MinValue)
+            {
+                dias = false;
+                horas = true;
+                formatoFecha = "Datetime";
+            }
+            else
+            {
+                dias = true;
+                horas = false;
+                formatoFecha = "Date";
+            }
+        }
+
+
+    }
+}

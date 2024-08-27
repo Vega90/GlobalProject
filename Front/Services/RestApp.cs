@@ -7,7 +7,7 @@ using static System.Net.WebRequestMethods;
 namespace Front.Services
 {
 
-
+    // clase padre para lanzar peticiones REST
     public class RestApp
     {
         protected HttpClient client;
@@ -15,6 +15,7 @@ namespace Front.Services
         protected string baseUrl = "http://localhost:5000/api";
         protected Respuesta respuesta;
 
+         
         public RestApp(HttpClient httpClient) {
 
             Setting.BaseUrl = baseUrl;

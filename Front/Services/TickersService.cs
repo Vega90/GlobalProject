@@ -7,15 +7,17 @@ using System.Text;
 
 namespace Front.Services
 {
+
     public class TickersService : RestApp
     {
         protected string urlController { get; set; } = "/tickers";
 
-
+        // creamos el objeto llamando al constructor RestApp
         public TickersService(HttpClient httpClient) : base(httpClient)
         {
         }
 
+        // Llama al EndPoint para conseguir todos los tickers que pongamos en la API
         public async Task<Dictionary<string, string>> GetTickersAsync()
         {
             var url = $"{baseUrl}/{urlController}";
@@ -43,7 +45,7 @@ namespace Front.Services
 
         }
 
-        // Método para obtener los detalles del ticker seleccionado
+        // Llama al EndPoint  para obtener los detalles del ticker seleccionado
         public async Task<Dictionary<string, List<Ticker>>> GetTickerDataAsync(string nombre, string ticker, string periodo, string intervalo)
         {
             var url = $"{baseUrl}/{urlController}/details";

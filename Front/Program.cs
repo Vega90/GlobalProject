@@ -25,6 +25,8 @@ builder.Services.AddRadzenComponents();
 
 builder.Services.AddScoped<TickersService>();
 
+builder.Services.AddScoped<ModelosService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

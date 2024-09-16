@@ -12,5 +12,8 @@
         public decimal Dividends { get; set; }
         public decimal StockSplits { get; set; }
         public long Volume { get; set; }
+
+       //si predecimos
+        public int Signal { get; set; }
     }
 }

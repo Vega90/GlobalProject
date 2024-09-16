@@ -74,13 +74,11 @@ namespace Front.Services
                 }
                 else
                 {
-                    // Manejo del error según sea necesario, puedes registrar el error o lanzar una excepción personalizada
                     return null;
                 }
             }
             catch (Exception ex)
             {
-                // Manejo de excepciones, puedes registrar el error o lanzar una excepción personalizada
                 return null;
             }
         }

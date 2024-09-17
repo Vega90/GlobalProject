@@ -110,9 +110,9 @@
 
 
 @code {
-    private string selectedTicker;
-    private string selectedPeriod = "1d"; // Valor por defecto
-    private string selectedInterval = "1m"; // Valor por defecto
+    private string selectedTicker = "MSFT";
+    private string selectedPeriod = "1d"; 
+    private string selectedInterval = "1m"; 
     RadzenDataGrid<Ticker> grid;
 
     private string formatoFecha = "";
@@ -217,7 +217,7 @@
     private Dictionary<string, List<Ticker>> data;
     private List<Ticker> listaValores;
 
-
+    // llamamos al endpoint para el histórico de datos
     private async Task OnSubmit()
     {
         formatoFecha = "";
@@ -237,7 +237,7 @@
             var firstTicker = listaValores.First();
             DateTime firstDateTime = firstTicker.Datetime;
 
-
+            // para ver si tiene el formato date o datetime según el periodo
             if (firstTicker.Datetime != DateTime.MinValue)
             {
                 dias = false;

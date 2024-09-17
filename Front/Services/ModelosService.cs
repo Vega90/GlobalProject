@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Front.Services
 {
+    // hereda de RestApp
     public class ModelosService : RestApp
     {
 

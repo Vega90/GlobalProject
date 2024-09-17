@@ -1,6 +1,6 @@
 ﻿namespace Front.Models
 {
-    //ticker tanto para ALPACA como para Yahoo Finance
+    // objeto ticker tanto para ALPACA como para Yahoo Finance
     public class Ticker
     {
         public DateTime Datetime { get; set; }

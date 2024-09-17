@@ -9,7 +9,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 
-// Registrar HttpClient para uso en Blazor Server
+// registramos HttpClient para uso en Blazor Server
 builder.Services.AddHttpClient<TickersService>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:5000");
@@ -23,6 +23,7 @@ builder.Services.AddHttpClient<TickersService>(client =>
 });
 builder.Services.AddRadzenComponents();
 
+// añadimos los servicios
 builder.Services.AddScoped<TickersService>();
 
 builder.Services.AddScoped<ModelosService>();

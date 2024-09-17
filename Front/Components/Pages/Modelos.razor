@@ -78,14 +78,14 @@
 @code {
 
     private string selectedTicker = "MSFT";
-    private string selectedInterval = "5Min"; // Valor por defecto
+    private string selectedInterval = "5Min"; 
     private string selectedModel = "decisionTree";
-    private DateTime selectedInicio = new DateTime(2023, 01, 01);// Valor por defecto
+    private DateTime selectedInicio = new DateTime(2023, 01, 01);
     private DateTime selectedFinal = new DateTime(2023, 01, 25);
 
     RadzenDataGrid<Ticker> grid;
 
-    // los tickers que está mostrando (podemos rellenarlo con el endpoint getTickers)
+    // los tickers que está mostrando (podemos rellenarlo con el endpoint getTickers si queremos)
     private Dictionary<string, string> tickers = new Dictionary<string, string>
     {
         { "Apple Inc.", "AAPL" },
@@ -122,6 +122,7 @@
     private List<Ticker> listaValores;
     private Dictionary<string, List<Ticker>> data;
 
+    // formato euro
     string FormatAsEUR(object value)
     {
         double number;
@@ -136,6 +137,7 @@
         }
     }
 
+    // al darle a generar señales llamamos al endpoint
     private async Task OnSubmit()
     {
         data = await ModelosService.GetPrediccionAsync(
@@ -153,25 +155,13 @@
         }
     }
 
+    //solo mostramos si es vender o comprar (-1 o 1)
     private bool mostrarAnotacion(Ticker item)
     {
-        // Solo mostrar la anotación si Signal es 1 (comprar) o -1 (vender)
         return item.Signal == 1 || item.Signal == -1;
     }
 
-    private MarkerType iconoSignal(Ticker item)
-    {
-        if (item.Signal == 1)
-        {
-            return MarkerType.Diamond;
-        }
-        else if (item.Signal == -1)
-        {
-            return MarkerType.None; 
-        }
-        return MarkerType.None;
-    }
-
+    // ponemos una V (vender) o una C (comprar) como anotacion
     private string anotacionSignal(Ticker item)
     {
         if (item.Signal == 1)

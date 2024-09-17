@@ -1,0 +1,178 @@
+﻿@page "/modelos"
+@using System.Globalization
+@inject HttpClient Http
+@inject ModelosService ModelosService
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@rendermode InteractiveServer
+
+<div>
+    <RadzenImage Path="img/logo-iebs.png" Style="max-width: 30%; height: auto; margin-bottom: 20px" />
+    <h2>Algoritmos de Machine Learning para Trading</h2>
+</div>
+<br />
+<div style="margin-top: 20px">
+    <h4>Predicciones Financieras</h4>
+
+    <p>Generador de señales de Compra/Venta utilizando Machine Learning</p>
+</div>
+<br />
+
+<RadzenCard>
+    <RadzenCardTitle>Seleccione el Activo, el intervalo, las fechas y el modelo para realizar la predicción</RadzenCardTitle>
+    <RadzenFieldset>
+        <RadzenDropDown @bind-Value="selectedTicker" Data="@(tickers)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un ticker" />
+        <RadzenDropDown @bind-Value="selectedInterval" Data="@(intervals)" Placeholder="Selecciona un intervalo" />
+        <RadzenDatePicker @bind-Value="selectedInicio" DateFormat="yyyy-MM-dd" Placeholder="Fecha de inicio" />
+        <RadzenDatePicker @bind-Value="selectedFinal" DateFormat="yyyy-MM-dd" Placeholder="Fecha de fin" />
+        <RadzenDropDown @bind-Value="selectedModel" Data="@(modelos)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un modelo" />
+
+        <RadzenButton Text="Generar Señales" ButtonStyle="ButtonStyle.Primary" Click="OnSubmit" />
+    </RadzenFieldset>
+</RadzenCard>
+
+<br/>
+
+@if (data != null && listaValores.Count != 0)
+{
+    <RadzenStack Orientation="Orientation.Vertical" Gap="4px" JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center">
+         <RadzenCard Style="width: 100%" class="rz-p-0">
+            <RadzenChart>
+                <RadzenLineSeries Smooth="false" Data="@listaValores" CategoryProperty="Datetime" Title="@selectedTicker" ValueProperty="Close" RenderingOrder="1">
+                    @foreach (var item in listaValores)
+                    {
+                        <RadzenSeriesAnnotation Visible="@mostrarAnotacion(item)"
+                                                TItem="Ticker"
+                                                Data="@item"
+                                                OffsetY="-16"
+                                                Text="@anotacionSignal(item)" />
+                    }
+                </RadzenLineSeries>
+                <RadzenLegend Visible="false" />
+                <RadzenCategoryAxis Padding="10" />
+                <RadzenValueAxis Formatter="@FormatAsEUR">
+                    <RadzenGridLines Visible="true" />
+                    <RadzenAxisTitle Text="Cierre en EUR" />
+                </RadzenValueAxis>
+            </RadzenChart>
+        </RadzenCard>
+        <RadzenCard class="rz-p-0">
+
+            <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                            @ref="grid" Data="@listaValores" TItem="Ticker" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+                <Columns>
+                    <RadzenDataGridColumn TItem="Ticker" Property="Datetime" Title="Fecha" FormatString="{0:yyyy-MM-dd HH:mm:ss}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Open" Title="Apertura" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="High" Title="Máximo" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Low" Title="Mínimo" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Close" Title="Cierre" FormatString="{0:C}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Volume" Title="Volumen" FormatString="{0:N0}" Width="Auto" TextAlign="TextAlign.Center" />
+                    <RadzenDataGridColumn TItem="Ticker" Property="Signal" Title="Señal" FormatString="{0:N0}" Width="Auto" TextAlign="TextAlign.Center" />
+                </Columns>
+            </RadzenDataGrid>
+        </RadzenCard>
+    </RadzenStack>
+
+}
+
+@code {
+
+    private string selectedTicker = "MSFT";
+    private string selectedInterval = "5Min"; 
+    private string selectedModel = "decisionTree";
+    private DateTime selectedInicio = new DateTime(2023, 01, 01);
+    private DateTime selectedFinal = new DateTime(2023, 01, 25);
+
+    RadzenDataGrid<Ticker> grid;
+
+    // los tickers que está mostrando (podemos rellenarlo con el endpoint getTickers si queremos)
+    private Dictionary<string, string> tickers = new Dictionary<string, string>
+    {
+        { "Apple Inc.", "AAPL" },
+        { "Microsoft Corp.", "MSFT" },
+        { "Amazon.com Inc.", "AMZN" },
+        { "Banco Santander", "SAN.MC" },
+        { "BBVA", "BBVA.MC" },
+        { "Telefónica", "TEF.MC" },
+        { "Inditex", "ITX.MC" },
+        { "Iberdrola", "IBE.MC" },
+        { "Repsol", "REP.MC" },
+        { "CaixaBank", "CABK.MC" },
+        { "Amadeus", "AMS.MC" },
+        { "Aena", "AENA.MC" },
+        { "Ferrovial", "FER.MC" },
+        { "Bitcoin EUR", "BTC-EUR" }
+    };
+
+    //intervalos disponibles
+    private List<string> intervals = new List<string>
+    {
+        "5Min", "15Min", "30Min", "1Hour", "5Hour", "10Hour", "1Day", "5Day", "15Day"
+    };
+
+
+    //modelos disponibles
+    private Dictionary<string, string> modelos = new Dictionary<string, string>
+    {
+        { "Árboles de decisión", "decisionTree" },
+        { "Random Forest", "randomForest" },
+        { "Support Vector Machine", "svm" }
+    };
+
+    private List<Ticker> listaValores;
+    private Dictionary<string, List<Ticker>> data;
+
+    // formato euro
+    string FormatAsEUR(object value)
+    {
+        double number;
+        if (double.TryParse(value.ToString(), out number))
+        {
+            // Usa el formato para euros en España
+            return number.ToString("C0", CultureInfo.CreateSpecificCulture("es-ES"));
+        }
+        else
+        {
+            return string.Empty;
+        }
+    }
+
+    // al darle a generar señales llamamos al endpoint
+    private async Task OnSubmit()
+    {
+        data = await ModelosService.GetPrediccionAsync(
+            selectedTicker,
+            selectedModel,
+            selectedInterval,
+            selectedInicio.ToString("yyyy-MM-dd"),
+            selectedFinal.ToString("yyyy-MM-dd")
+        );
+
+
+        if (data != null)
+        {
+            listaValores = data.Values.SelectMany(list => list).ToList();
+        }
+    }
+
+    //solo mostramos si es vender o comprar (-1 o 1)
+    private bool mostrarAnotacion(Ticker item)
+    {
+        return item.Signal == 1 || item.Signal == -1;
+    }
+
+    // ponemos una V (vender) o una C (comprar) como anotacion
+    private string anotacionSignal(Ticker item)
+    {
+        if (item.Signal == 1)
+        {
+            return "C";
+        }
+        else if (item.Signal == -1)
+        {
+            return "V";
+        }
+        return "";
+    }
+
+}

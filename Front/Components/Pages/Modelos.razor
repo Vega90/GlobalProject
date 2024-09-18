@@ -23,8 +23,8 @@
     <RadzenFieldset Style="margin-top: 10px">
         <RadzenDropDown Style="margin: 5px" @bind-Value="selectedTicker" Data="@(tickers)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un ticker" />
         <RadzenDropDown Style="margin: 5px" @bind-Value="selectedInterval" Data="@(intervals)" Placeholder="Selecciona un intervalo" />
-        <RadzenDatePicker Style="margin: 5px" @bind-Value="selectedInicio" DateFormat="yyyy-MM-dd" Placeholder="Fecha de inicio" />
-        <RadzenDatePicker Style="margin: 5px" @bind-Value="selectedFinal" DateFormat="yyyy-MM-dd" Placeholder="Fecha de fin" />
+        <RadzenDatePicker Min="@(new DateTime(2017, 1, 1))" Max="@(DateTime.Now.AddDays(-1))" Style="margin: 5px" @bind-Value="selectedInicio" DateFormat="yyyy-MM-dd" Placeholder="Fecha de inicio" />
+        <RadzenDatePicker Min="@(new DateTime(2017, 1, 1))" Max="@(DateTime.Now.AddDays(-1))" Style="margin: 5px" @bind-Value="selectedFinal" DateFormat="yyyy-MM-dd" Placeholder="Fecha de fin" />
         <RadzenDropDown Style="margin: 5px" @bind-Value="selectedModel" Data="@(modelos)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un modelo" />
 
         <RadzenButton Style="margin: 5px" Text="Generar Señales" ButtonStyle="ButtonStyle.Primary" Click="OnSubmit" />
@@ -107,7 +107,7 @@
     //intervalos disponibles
     private List<string> intervals = new List<string>
     {
-        "5Min", "15Min", "30Min", "1Hour", "5Hour", "10Hour", "1Day", "5Day", "15Day"
+        "5Min", "15Min", "30Min", "1Hour", "5Hour", "10Hour", "1Day"
     };
 
 

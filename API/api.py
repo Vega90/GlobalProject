@@ -42,7 +42,7 @@ def predecir_endpoint():
     fechaFinal = data.get('fechaFinal', '2023-01-25')
     modelo = data.get('modelo', 'decisionTree')
 
-    # Devolver el dataframe como JSON y la imagen PNG del grafico
+    # Devolver el dataframe como JSON
     df_compras = produccion.predecir(ticker, intervalo, fechaInicio, fechaFinal, modelo)
     response_data = {}
     if not df_compras.empty:

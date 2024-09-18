@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 import plotly.io as pio
 import pandas as pd
 import io
+from sklearn.preprocessing import MinMaxScaler
 
 # claves para acceder a la api
 api_key_alpaca = 'PKJU9M1H958FUDUBMHBF'
@@ -83,14 +84,17 @@ def predecir(ticker, intervalo, fechaInicio, fechaFinal, modelo):
     df_predecir = obtenerIndicadores(df_predecir).fillna(0)
     print("Obtenidos los indicadores")
     predicciones = []
-
+    
     
     if modelo == 'decisionTree':
         predicciones = modelo_decisionTree.predict(df_predecir)
     elif modelo == 'randomForest':
         predicciones = modelo_randomForest.predict(df_predecir)
     else:
-        predicciones = modelo_svm.predict(df_predecir)
+        df_svm = df_predecir.copy()
+        scaler = MinMaxScaler()
+        df_svm = scaler.fit_transform(df_svm)
+        predicciones = modelo_svm.predict(df_svm)
 
     print("Realizadas las predicciones")
     df_predecir['signal'] = predicciones

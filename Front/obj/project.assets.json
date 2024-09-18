@@ -838,11 +838,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\MASTER\\00. Proyecto Final Master\\AppMaster\\Front\\Front\\Front.csproj",
+      "projectUniqueName": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\Front.csproj",
       "projectName": "Front",
-      "projectPath": "E:\\MASTER\\00. Proyecto Final Master\\AppMaster\\Front\\Front\\Front.csproj",
+      "projectPath": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\Front.csproj",
       "packagesPath": "C:\\Users\\cpana\\.nuget\\packages\\",
-      "outputPath": "E:\\MASTER\\00. Proyecto Final Master\\AppMaster\\Front\\Front\\obj\\",
+      "outputPath": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -2,7 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\API",
-    "\\Front"
+    "\\Front",
+    "\\Front\\Models"
   ],
   "SelectedNode": "\\APP MASTER.sln",
   "PreviewInSolutionExplorer": false

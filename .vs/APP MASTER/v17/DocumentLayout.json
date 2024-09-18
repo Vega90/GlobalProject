@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F7FF7327-0560-4DBB-9D94-A56C82D6DD9B}|Front\\Front.csproj|c:\\users\\cpana\\source\\repos\\vega90\\globalproject\\front\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F7FF7327-0560-4DBB-9D94-A56C82D6DD9B}|Front\\Front.csproj|solutionrelative:front\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F7FF7327-0560-4DBB-9D94-A56C82D6DD9B}|Front\\Front.csproj|c:\\users\\cpana\\source\\repos\\vega90\\globalproject\\front\\components\\pages\\modelos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F7FF7327-0560-4DBB-9D94-A56C82D6DD9B}|Front\\Front.csproj|solutionrelative:front\\components\\pages\\modelos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B54D942-7FE2-4C28-8163-DFE42B849606}|API\\API.pyproj|C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\API\\produccion.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8B54D942-7FE2-4C28-8163-DFE42B849606}|API\\API.pyproj|solutionrelative:API\\produccion.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7FF7327-0560-4DBB-9D94-A56C82D6DD9B}|Front\\Front.csproj|c:\\users\\cpana\\source\\repos\\vega90\\globalproject\\front\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7FF7327-0560-4DBB-9D94-A56C82D6DD9B}|Front\\Front.csproj|solutionrelative:front\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F7FF7327-0560-4DBB-9D94-A56C82D6DD9B}|Front\\Front.csproj|c:\\users\\cpana\\source\\repos\\vega90\\globalproject\\front\\components\\pages\\tickers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -22,37 +26,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "produccion.py",
+              "DocumentMoniker": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\API\\produccion.py",
+              "RelativeDocumentMoniker": "API\\produccion.py",
+              "ToolTip": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\API\\produccion.py",
+              "RelativeToolTip": "API\\produccion.py",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-09-18T14:23:41.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Front\\Components\\Pages\\Home.razor",
               "ToolTip": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "Front\\Components\\Pages\\Home.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABEAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAwAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-18T11:26:42.245Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Modelos.razor",
               "DocumentMoniker": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Components\\Pages\\Modelos.razor",
               "RelativeDocumentMoniker": "Front\\Components\\Pages\\Modelos.razor",
               "ToolTip": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Components\\Pages\\Modelos.razor",
               "RelativeToolTip": "Front\\Components\\Pages\\Modelos.razor",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB0AAAAqAAAA",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAAAAwAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-18T11:26:39.309Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Tickers.razor",
               "DocumentMoniker": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Components\\Pages\\Tickers.razor",
               "RelativeDocumentMoniker": "Front\\Components\\Pages\\Tickers.razor",
@@ -60,8 +77,7 @@
               "RelativeToolTip": "Front\\Components\\Pages\\Tickers.razor",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAABoAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T11:26:18.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-18T11:26:18.39Z"
             }
           ]
         }

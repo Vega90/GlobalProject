@@ -25,6 +25,7 @@
   <ItemGroup>
     <Content Include="modelo_decisionTree.joblib" />
     <Content Include="modelo_randomForest.joblib" />
+    <Content Include="modelo_svm.joblib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

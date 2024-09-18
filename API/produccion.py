@@ -18,7 +18,7 @@ from joblib import load
 
 modelo_decisionTree = load('modelo_decisionTree.joblib')
 modelo_randomForest = load('modelo_randomForest.joblib')
-#modelo_svm = load('modelo_svm.joblib')
+modelo_svm = load('modelo_svm.joblib')
 
 def obtenerIndicadores(df_datos):
 
@@ -89,8 +89,8 @@ def predecir(ticker, intervalo, fechaInicio, fechaFinal, modelo):
         predicciones = modelo_decisionTree.predict(df_predecir)
     elif modelo == 'randomForest':
         predicciones = modelo_randomForest.predict(df_predecir)
-    #else 
-        #predicciones = modelo_svm.predict(df_predecir)
+    else:
+        predicciones = modelo_svm.predict(df_predecir)
 
     print("Realizadas las predicciones")
     df_predecir['signal'] = predicciones

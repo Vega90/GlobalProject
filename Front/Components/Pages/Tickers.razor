@@ -9,7 +9,7 @@
 <PageTitle>Tickers</PageTitle>
 
 <div>
-    <RadzenImage Path="img/logo-iebs.png" Style="max-width: 30%; height: auto; margin-bottom: 20px" />
+    <RadzenImage Path="img/logo-iebs.png" Style="max-width: 20%; min-width: 10% !important; height: auto; margin-bottom: 20px" />
     <h2>Algoritmos de Machine Learning para Trading</h2>
 </div>
 <br />
@@ -23,10 +23,10 @@
 
 <RadzenCard>
     <RadzenCardTitle>Seleccione el Activo, el Período y el Intervalo</RadzenCardTitle>
-    <RadzenFieldset>
-        <RadzenDropDown @bind-Value="selectedTicker" Data="@(tickers)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un ticker" />
-        <RadzenDropDown @bind-Value="selectedPeriod" Data="@(periods)" Placeholder="Selecciona un periodo" Change="OnPeriodChanged" />
-        <RadzenDropDown @bind-Value="selectedInterval" Data="@(intervals)" Placeholder="Selecciona un intervalo" />
+    <RadzenFieldset Style="margin-top: 10px">
+        <RadzenDropDown Style="margin: 5px" @bind-Value="selectedTicker" Data="@(tickers)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un ticker" />
+        <RadzenDropDown Style="margin: 5px"@bind-Value="selectedPeriod" Data="@(periods)" Placeholder="Selecciona un periodo" Change="OnPeriodChanged" />
+        <RadzenDropDown Style="margin: 5px" @bind-Value="selectedInterval" Data="@(intervals)" Placeholder="Selecciona un intervalo" />
         <RadzenButton Text="Consultar" ButtonStyle="ButtonStyle.Primary" Click="OnSubmit" />
     </RadzenFieldset>
 

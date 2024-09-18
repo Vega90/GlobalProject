@@ -7,7 +7,7 @@
 @rendermode InteractiveServer
 
 <div>
-    <RadzenImage Path="img/logo-iebs.png" Style="max-width: 30%; height: auto; margin-bottom: 20px" />
+    <RadzenImage Path="img/logo-iebs.png" Style="max-width: 20%; min-width: 10% !important; height: auto; margin-bottom: 20px" />
     <h2>Algoritmos de Machine Learning para Trading</h2>
 </div>
 <br />
@@ -20,14 +20,14 @@
 
 <RadzenCard>
     <RadzenCardTitle>Seleccione el Activo, el intervalo, las fechas y el modelo para realizar la predicción</RadzenCardTitle>
-    <RadzenFieldset>
-        <RadzenDropDown @bind-Value="selectedTicker" Data="@(tickers)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un ticker" />
-        <RadzenDropDown @bind-Value="selectedInterval" Data="@(intervals)" Placeholder="Selecciona un intervalo" />
-        <RadzenDatePicker @bind-Value="selectedInicio" DateFormat="yyyy-MM-dd" Placeholder="Fecha de inicio" />
-        <RadzenDatePicker @bind-Value="selectedFinal" DateFormat="yyyy-MM-dd" Placeholder="Fecha de fin" />
-        <RadzenDropDown @bind-Value="selectedModel" Data="@(modelos)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un modelo" />
+    <RadzenFieldset Style="margin-top: 10px">
+        <RadzenDropDown Style="margin: 5px" @bind-Value="selectedTicker" Data="@(tickers)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un ticker" />
+        <RadzenDropDown Style="margin: 5px" @bind-Value="selectedInterval" Data="@(intervals)" Placeholder="Selecciona un intervalo" />
+        <RadzenDatePicker Style="margin: 5px" @bind-Value="selectedInicio" DateFormat="yyyy-MM-dd" Placeholder="Fecha de inicio" />
+        <RadzenDatePicker Style="margin: 5px" @bind-Value="selectedFinal" DateFormat="yyyy-MM-dd" Placeholder="Fecha de fin" />
+        <RadzenDropDown Style="margin: 5px" @bind-Value="selectedModel" Data="@(modelos)" TextProperty="Key" ValueProperty="Value" Placeholder="Selecciona un modelo" />
 
-        <RadzenButton Text="Generar Señales" ButtonStyle="ButtonStyle.Primary" Click="OnSubmit" />
+        <RadzenButton Style="margin: 5px" Text="Generar Señales" ButtonStyle="ButtonStyle.Primary" Click="OnSubmit" />
     </RadzenFieldset>
 </RadzenCard>
 

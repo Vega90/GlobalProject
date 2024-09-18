@@ -33,3 +33,38 @@ E:\MASTER\00. Proyecto Final Master\AppMaster\Front\Front\obj\Debug\net8.0\ref\F
 E:\MASTER\00. Proyecto Final Master\AppMaster\Front\Front\bin\Debug\net8.0\Radzen.Blazor.dll
 E:\MASTER\00. Proyecto Final Master\AppMaster\Front\Front\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
 E:\MASTER\00. Proyecto Final Master\AppMaster\Front\Front\obj\Debug\net8.0\Front.sourcelink.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\appsettings.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\Front.staticwebassets.runtime.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\Front.exe
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\Front.deps.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\Front.runtimeconfig.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\Front.dll
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\Front.pdb
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\Radzen.Blazor.dll
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.csproj.AssemblyReference.cache
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.AssemblyInfoInputs.cache
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.AssemblyInfo.cs
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.csproj.CoreCompileInputs.cache
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.sourcelink.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\staticwebassets\msbuild.Front.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\staticwebassets\msbuild.build.Front.props
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Front.props
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Front.props
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\scopedcss\bundle\Front.styles.css
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\scopedcss\projectbundle\Front.bundle.scp.css
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.csproj.Up2Date
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.dll
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\refint\Front.dll
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.pdb
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\Front.genruntimeconfig.cache
+C:\Users\cpana\Source\Repos\Vega90\GlobalProject\Front\obj\Debug\net8.0\ref\Front.dll

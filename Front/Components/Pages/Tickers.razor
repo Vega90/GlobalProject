@@ -29,8 +29,16 @@
         <RadzenDropDown Style="margin: 5px" @bind-Value="selectedInterval" Data="@(intervals)" Placeholder="Selecciona un intervalo" />
         <RadzenButton Text="Consultar" ButtonStyle="ButtonStyle.Primary" Click="OnSubmit" />
     </RadzenFieldset>
+    @if (isLoading)
+    {
+        <RadzenStack AlignItems="AlignItems.Center" Gap="1rem" class="rz-m-12">
 
-    @if (data != null && listaValores.Count!=0)
+            <RadzenProgressBarCircular ShowValue="false" ProgressBarStyle="ProgressBarStyle.Info" Mode="ProgressBarMode.Indeterminate" Size="ProgressBarCircularSize.Large">
+            </RadzenProgressBarCircular>
+
+        </RadzenStack>
+    }
+    else if (data != null && listaValores.Count!=0)
     {
         <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12">
             <RadzenCard Variant="Variant.Outlined">
@@ -114,6 +122,8 @@
     private string selectedPeriod = "1d"; 
     private string selectedInterval = "1m"; 
     RadzenDataGrid<Ticker> grid;
+    private bool isLoading = false;
+
 
     private string formatoFecha = "";
     bool trend = true;
@@ -222,6 +232,9 @@
     {
         formatoFecha = "";
 
+        isLoading = true;
+
+
         data = await tickersService.GetTickerDataAsync(
             selectedTicker, 
             selectedTicker, 
@@ -251,6 +264,8 @@
                 formatoFecha = "Date";
             }
         }
+
+        isLoading = false;
 
 
     }

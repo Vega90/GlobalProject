@@ -3,8 +3,10 @@
     "",
     "\\API",
     "\\Front",
+    "\\Front\\Components",
+    "\\Front\\Components\\Pages",
     "\\Front\\Models"
   ],
-  "SelectedNode": "\\APP MASTER.sln",
+  "SelectedNode": "\\Front\\Components\\Pages\\Home.razor",
   "PreviewInSolutionExplorer": false
 }

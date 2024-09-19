@@ -33,7 +33,16 @@
 
 <br/>
 
-@if (data != null && listaValores.Count != 0)
+@if (isLoading)
+{
+    <RadzenStack AlignItems="AlignItems.Center" Gap="1rem" class="rz-m-12">
+
+        <RadzenProgressBarCircular ShowValue="false" ProgressBarStyle="ProgressBarStyle.Info" Mode="ProgressBarMode.Indeterminate" Size="ProgressBarCircularSize.Large">
+        </RadzenProgressBarCircular>
+
+    </RadzenStack>
+}
+else if (data != null && listaValores.Count != 0)
 {
     <RadzenStack Orientation="Orientation.Vertical" Gap="4px" JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center">
          <RadzenCard Style="width: 100%" class="rz-p-0">
@@ -44,7 +53,7 @@
                         <RadzenSeriesAnnotation Visible="@mostrarAnotacion(item)"
                                                 TItem="Ticker"
                                                 Data="@item"
-                                                OffsetY="-16"
+                                                OffsetY="0"
                                                 Text="@anotacionSignal(item)" />
                     }
                 </RadzenLineSeries>
@@ -82,6 +91,7 @@
     private string selectedModel = "decisionTree";
     private DateTime selectedInicio = new DateTime(2023, 01, 01);
     private DateTime selectedFinal = new DateTime(2023, 01, 25);
+    private bool isLoading = false;
 
     RadzenDataGrid<Ticker> grid;
 
@@ -140,6 +150,8 @@
     // al darle a generar señales llamamos al endpoint
     private async Task OnSubmit()
     {
+        isLoading = true;
+
         data = await ModelosService.GetPrediccionAsync(
             selectedTicker,
             selectedModel,
@@ -153,6 +165,8 @@
         {
             listaValores = data.Values.SelectMany(list => list).ToList();
         }
+
+        isLoading = false;
     }
 
     //solo mostramos si es vender o comprar (-1 o 1)
@@ -173,6 +187,19 @@
             return "V";
         }
         return "";
+    }
+
+    private MarkerType markerSignal(Ticker item)
+    {
+        if (item.Signal == 1)
+        {
+            return MarkerType.Diamond;
+        }
+        else if (item.Signal == -1)
+        {
+            return MarkerType.Triangle;
+        }
+        return MarkerType.None;
     }
 
 }

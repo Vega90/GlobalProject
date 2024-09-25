@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eFijn1WCggg=",
+  "dgSpecHash": "uMehCe1hKD8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\Front.csproj",
+  "projectFilePath": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Front.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cpana\\.nuget\\packages\\dartsassbuilder\\1.0.0\\dartsassbuilder.1.0.0.nupkg.sha512",
     "C:\\Users\\cpana\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",

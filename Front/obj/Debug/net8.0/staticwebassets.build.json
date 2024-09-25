@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pvCafIV1023NqQY5cMKEWx6vAWqXb59CiOOrG1PdTLo=",
+  "Hash": "o5ty88r/7NOXU0tmK6HmmWaqHC7Geke+r6kaYOugnl8=",
   "Source": "Front",
   "BasePath": "_content/Front",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "Front\\wwwroot",
       "Source": "Front",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "Pattern": "**"
     }
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "C:\\Users\\cpana\\.nuget\\packages\\radzen.blazor\\5.0.8\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Front.styles.css",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Front.styles.css",
       "SourceId": "Front",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Front",
       "RelativePath": "Front.styles.css",
       "AssetKind": "All",
@@ -850,13 +850,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Front.styles.css"
+      "OriginalItemSpec": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Front.styles.css"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Front.bundle.scp.css",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Front.bundle.scp.css",
       "SourceId": "Front",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Front",
       "RelativePath": "Front.bundle.scp.css",
       "AssetKind": "All",
@@ -869,13 +869,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Front.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Front.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\app.css",
       "SourceId": "Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\favicon.png",
       "SourceId": "Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\aaron.png",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\aaron.png",
       "SourceId": "Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "RelativePath": "img/aaron.png",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\img\\aaron.png"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\ana.png",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\ana.png",
       "SourceId": "Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "RelativePath": "img/ana.png",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\img\\ana.png"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\jaime.png",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\jaime.png",
       "SourceId": "Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "RelativePath": "img/jaime.png",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\img\\jaime.png"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\logo.jpg",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\logo.jpg",
       "SourceId": "Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "RelativePath": "img/logo.jpg",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\img\\logo.jpg"
     },
     {
-      "Identity": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\logo-iebs.png",
+      "Identity": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\logo-iebs.png",
       "SourceId": "Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\",
       "BasePath": "_content/Front",
       "RelativePath": "img/logo-iebs.png",
       "AssetKind": "All",

@@ -1,43 +1,43 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Front.bundle.scp.css",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Front.bundle.scp.css",
       "PackagePath": "staticwebassets\\Front.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\app.css",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\aaron.png",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\aaron.png",
       "PackagePath": "staticwebassets\\img\\aaron.png"
     },
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\ana.png",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\ana.png",
       "PackagePath": "staticwebassets\\img\\ana.png"
     },
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\jaime.png",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\jaime.png",
       "PackagePath": "staticwebassets\\img\\jaime.png"
     },
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\logo-iebs.png",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\logo-iebs.png",
       "PackagePath": "staticwebassets\\img\\logo-iebs.png"
     },
     {
-      "Id": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\logo.jpg",
+      "Id": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\wwwroot\\img\\logo.jpg",
       "PackagePath": "staticwebassets\\img\\logo.jpg"
     },
     {

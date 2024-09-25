@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\Front.csproj": {}
+    "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Front.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\Front.csproj": {
+    "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Front.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\Front.csproj",
+        "projectUniqueName": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Front.csproj",
         "projectName": "Front",
-        "projectPath": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\Front.csproj",
+        "projectPath": "C:\\Users\\cpana\\source\\repos\\Vega90\\GlobalProject\\Front\\Front.csproj",
         "packagesPath": "C:\\Users\\cpana\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\cpana\\Source\\Repos\\Vega90\\GlobalProject\\Front\\obj\\",
         "projectStyle": "PackageReference",

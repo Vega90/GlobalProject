@@ -20,6 +20,7 @@ from joblib import load
 modelo_decisionTree = load('modelo_decisionTree.joblib')
 modelo_randomForest = load('modelo_randomForest.joblib')
 modelo_svm = load('modelo_svm.joblib')
+modelo_gradient = load('modelo_gradient.joblib')
 
 def obtenerIndicadores(df_datos):
 
@@ -44,8 +45,8 @@ def obtenerIndicadores(df_datos):
     df_datos["12MACD"] = macd_12["MACD"]
     df_datos["12MACD_signal"] = macd_12["SIGNAL"]
 
-    df_datos["26MACD"] = macd_26["MACD"]
-    df_datos["26MACD_signal"] = macd_26["SIGNAL"]
+    #df_datos["26MACD"] = macd_26["MACD"]
+    #df_datos["26MACD_signal"] = macd_26["SIGNAL"]
 
     # El índice direccional promedio (ADX)
     df_datos["ADX"] = TA.ADX(df_datos)
@@ -76,7 +77,13 @@ def obtenerIndicadores(df_datos):
     # Calcular la línea de Acumulación/Distribución (A/D)
     df_datos['ADL'] = TA.ADL(df_datos)
 
-    return df_datos
+    # nos quedamos solo con las columnas con las que han sido entrenados los modelos
+    df = df_datos[['close', 'high', 'low', 'trade_count', 'open', 'volume', 'vwap', '4EMA',
+       '9EMA', '18EMA', '12MACD', '12MACD_signal', 'ADX', 'RSI',
+       'Stochastic_%K', 'Stochastic_%D', 'OBV', 'ADL']]
+
+    return df
+
 
 def predecir(ticker, intervalo, fechaInicio, fechaFinal, modelo):
     print("Comenzando a predecir...")
@@ -90,6 +97,8 @@ def predecir(ticker, intervalo, fechaInicio, fechaFinal, modelo):
         predicciones = modelo_decisionTree.predict(df_predecir)
     elif modelo == 'randomForest':
         predicciones = modelo_randomForest.predict(df_predecir)
+    elif modelo == 'gradientboosting':
+        predicciones = modelo_gradient.predict(df_predecir)
     else:
         df_svm = df_predecir.copy()
         scaler = MinMaxScaler()

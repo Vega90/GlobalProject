@@ -24,6 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="modelo_decisionTree.joblib" />
+    <Content Include="modelo_gradient.joblib" />
     <Content Include="modelo_randomForest.joblib" />
     <Content Include="modelo_svm.joblib" />
   </ItemGroup>
